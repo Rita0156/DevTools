@@ -14,7 +14,7 @@ const Homepage=()=>{
     return (
         <div className="home">
            {(data.length>0 && data!=undefined)?data.map((item)=>{
-                <Link>
+                <Link style={{textDecoration:"none",color:"black"}} to={'/'+item.id} >
                  <ItemData key={item.id} avatar_url={item.avatar_url} login={item.login}/>
                 </Link>
            }):<div>Loading....</div>}

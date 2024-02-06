@@ -15,7 +15,8 @@ const bookSchema=new mongoose.Schema({
     author_image:{type:String,required:true},
     book_image:{type:String,required:true},
     about_book_story:{type:String,required:true},
-    userId:{type:String,required:true}
+    userId:{type:String,required:true},
+    indexPage:{type:String,required:true}
 });
 
 const BookModel=mongoose.model('book',bookSchema);

@@ -17,6 +17,7 @@ app.get('/',(req,res,next)=>{
     res.send("Book app running currectly....")
 })
 app.use('/',signupRouter)
+app.use('/',loginRouter)
 
 app.listen(Port,async()=>{
     console.log('book app running on port:----',Port);

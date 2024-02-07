@@ -17,7 +17,7 @@ const authontication=(req,res,next)=>{
     jwt.verify(token, Secreate_key, function (err, decoded) {
         
         if (err) {
-            res.json({Message:"Please login again authentication failed",err})
+            res.json({Message:"Please login again authentication failed",err});
         }
 
         req.body.userId=decoded.userId;

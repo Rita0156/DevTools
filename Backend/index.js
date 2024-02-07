@@ -5,7 +5,8 @@ const { connectionDB}=require("./Config/db");
 const {signupRouter}=require("./Routes/signup")
 const {loginRouter}=require('./Routes/login')
 const Port=process.env.PORT || 7500
-
+const { bookRoute}=require('./Routes/books')
+const {authontication}=require('./Middleware/auth')
 const app=express()
 
 app.use(express.json())
@@ -18,6 +19,8 @@ app.get('/',(req,res,next)=>{
 })
 app.use('/',signupRouter)
 app.use('/',loginRouter)
+app.use(authontication);
+app.use('/',bookRoute)
 
 app.listen(Port,async()=>{
     console.log('book app running on port:----',Port);
@@ -26,6 +29,7 @@ app.listen(Port,async()=>{
        console.log('connected to db successfully');
     }
     catch(err){
-       console.log("connected to db failed",err);
+       console.log("connected to db failed");
+       console.log("failed error is ---",err);
     }
 })

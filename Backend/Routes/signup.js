@@ -22,7 +22,7 @@ signupRouter.post('/signup',async(req,res)=>{
         }
         let result=new SignupModel({
             userName:name,
-            userPassword:password,
+            userPassword:hash,
             userEmail:email
         })
 
